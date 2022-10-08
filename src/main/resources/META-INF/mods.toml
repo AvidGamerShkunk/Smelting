@@ -1,0 +1,21 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/AvidGamerShkunk/DebugBook/issues"
+
+[[mods]]
+modId = "debugbook"
+version = "0.1.0"
+displayName = "DebugBook"
+displayURL = "https://github.com/AvidGamerShkunk/DebugBook"
+authors = "AvidGamerShkunk"
+description = '''A book for debugging (specifically (among other things (and among doing other things (like summoning bats)))))
+ the devil hoe item.'''
+# yo dawg, triple single quotes (here) will allow it to span mulitple lines, so you can press enter in there, and it won't break anything
+
+[[dependencies.debugbook]]
+modId = "forge"
+mandatory = true
+versionRange = "[43.1.1,)"
+ordering = "NONE"
+side = "BOTH"

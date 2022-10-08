@@ -1,0 +1,16 @@
+{
+    "files.exclude":{
+        ".gradle": true,
+        "**/bin": true,
+        "**/build": true,
+        "**/run": true,
+        "gradle": true,
+        "gradlew": true,
+        "LICENSE": true
+    },
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "[java][gradle]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    }
+}
