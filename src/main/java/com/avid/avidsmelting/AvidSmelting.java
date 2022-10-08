@@ -1,8 +1,11 @@
-package com.avid.debugbook;
+package com.avid.avidsmelting;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.avid.avidsmelting.network.Channel;
+import com.avid.avidsmelting.network.AvidSmeltingMessage;
+import com.avid.avidsmelting.network.UnAvidSmeltingMessage;
 import com.mojang.blaze3d.platform.InputConstants;
 
 import net.minecraft.client.KeyMapping;
@@ -14,23 +17,21 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.simple.SimpleChannel;
-import com.avid.debugbook.network.Channel;
-import com.avid.debugbook.network.DebugBookMessage;
-import com.avid.debugbook.network.UnDebugBookMessage;
 
-@Mod(DebugBook.ID)
-public class DebugBook {
+@Mod(AvidSmelting.ID)
+public class AvidSmelting {
     public static final String ID = "debugbook";
     public static final Logger LOGGER = LogManager.getLogger(ID);
 
-    public static final KeyMapping KEY_DEBUGBOOK = new KeyMapping("key." + ID + ".debugbook.desc", KeyConflictContext.IN_GAME,
+    public static final KeyMapping KEY_DEBUGBOOK = new KeyMapping("key." + ID + ".debugbook.desc",
+            KeyConflictContext.IN_GAME,
             InputConstants.UNKNOWN, "key." + ID + ".category");
     public static final KeyMapping KEY_UNDEBUGBOOK = new KeyMapping("key." + ID + ".undebugbook.desc",
             KeyConflictContext.IN_GAME, InputConstants.UNKNOWN, "key." + ID + ".category");
 
     public static SimpleChannel CHANNEL;
 
-    public DebugBook() {
+    public AvidSmelting() {
         var modEvent = FMLJavaModLoadingContext.get().getModEventBus();
         modEvent.addListener(this::onCommonSetup);
         modEvent.addListener(this::onRegisterKeyMappings);
@@ -42,19 +43,18 @@ public class DebugBook {
         CHANNEL = Channel.register();
     }
 
-    private void onRegisterKeyMappings(final RegisterKeyMappingsEvent event)
-    {
+    private void onRegisterKeyMappings(final RegisterKeyMappingsEvent event) {
         event.register(KEY_DEBUGBOOK);
         event.register(KEY_UNDEBUGBOOK);
     }
 
     private void onClientTick(ClientTickEvent event) {
         if (KEY_DEBUGBOOK.isDown()) {
-            CHANNEL.sendToServer(new DebugBookMessage());
+            CHANNEL.sendToServer(new AvidSmeltingMessage());
         }
 
         if (KEY_UNDEBUGBOOK.isDown()) {
-            CHANNEL.sendToServer(new UnDebugBookMessage());
+            CHANNEL.sendToServer(new UnAvidSmeltingMessage());
         }
     }
 }
