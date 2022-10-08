@@ -1,4 +1,4 @@
-package com.avid.avidsmelting.network;
+package website.avid.avidsmelting.network;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;

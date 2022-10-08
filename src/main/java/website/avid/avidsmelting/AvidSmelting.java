@@ -1,11 +1,11 @@
-package com.avid.avidsmelting;
+package website.avid.avidsmelting;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.avid.avidsmelting.network.Channel;
-import com.avid.avidsmelting.network.AvidSmeltingMessage;
-import com.avid.avidsmelting.network.UnAvidSmeltingMessage;
+import website.avid.avidsmelting.network.Channel;
+import website.avid.avidsmelting.network.AvidSmeltingMessage;
+import website.avid.avidsmelting.network.UnAvidSmeltingMessage;
 import com.mojang.blaze3d.platform.InputConstants;
 
 import net.minecraft.client.KeyMapping;

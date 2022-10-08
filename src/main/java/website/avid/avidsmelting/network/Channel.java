@@ -1,6 +1,6 @@
-package com.avid.avidsmelting.network;
+package website.avid.avidsmelting.network;
 
-import com.avid.avidsmelting.AvidSmelting;
+import website.avid.avidsmelting.AvidSmelting;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
